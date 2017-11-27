@@ -31,7 +31,7 @@ namespace IdentityServer
                 {
                     options.Listen(IPAddress.Any, 44304, listenOptions =>
                     {
-                        listenOptions.UseHttps("../mini.local.pfx", "pass");
+                        listenOptions.UseHttps("../mac.local.pfx", "pass");
                     });
                 });
             }
