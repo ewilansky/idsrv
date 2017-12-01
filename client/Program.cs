@@ -44,10 +44,11 @@ namespace client
         {
             // call the api
             var client = new HttpClient();
+            // add access token retrieved from token endpoint - Identity Server
             client.SetBearerToken((tokenResponse.AccessToken));
 
             var response =
-                await client.GetAsync("https://mini.local:44304/api/identity");
+                await client.GetAsync("https://mini.local:44304/api/webhdfs");
 
             if (!response.IsSuccessStatusCode)
             {
