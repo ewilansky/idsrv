@@ -1,14 +1,18 @@
 
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityServer", "IdentityServer\IdentityServer.csproj", "{ABC0B08D-1E9C-460C-8FA5-2E5A2FF4BDCC}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "client", "client\client.csproj", "{2380D411-99B7-4190-9363-6DC199E2A94C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleClientCredentialGrant", "client\ConsoleClientCredentialGrant.csproj", "{2380D411-99B7-4190-9363-6DC199E2A94C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{64B0E8EA-EA4B-44BA-BDD1-9CAAE2FA91AB}"
 	ProjectSection(SolutionItems) = preProject
 		mac.local.pfx = mac.local.pfx
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleClientHybrid", "clientHybridWithPkce\ConsoleClientHybrid.csproj", "{4FEC805A-B86B-49CD-91C4-2378BB3B6A75}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityServerHybrid", "QuickstartIdentityServer\IdentityServerHybrid.csproj", "{C5D1600D-9CF1-48C9-8200-AFD92A30D07B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcClientHybrid", "MvcClientHybridPkce\MvcClientHybrid.csproj", "{C47CF36D-2AC5-4D7B-B834-355B2AB9A779}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -16,13 +20,21 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{ABC0B08D-1E9C-460C-8FA5-2E5A2FF4BDCC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{ABC0B08D-1E9C-460C-8FA5-2E5A2FF4BDCC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{ABC0B08D-1E9C-460C-8FA5-2E5A2FF4BDCC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{ABC0B08D-1E9C-460C-8FA5-2E5A2FF4BDCC}.Release|Any CPU.Build.0 = Release|Any CPU
 		{2380D411-99B7-4190-9363-6DC199E2A94C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{2380D411-99B7-4190-9363-6DC199E2A94C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2380D411-99B7-4190-9363-6DC199E2A94C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2380D411-99B7-4190-9363-6DC199E2A94C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4FEC805A-B86B-49CD-91C4-2378BB3B6A75}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4FEC805A-B86B-49CD-91C4-2378BB3B6A75}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4FEC805A-B86B-49CD-91C4-2378BB3B6A75}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4FEC805A-B86B-49CD-91C4-2378BB3B6A75}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C5D1600D-9CF1-48C9-8200-AFD92A30D07B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5D1600D-9CF1-48C9-8200-AFD92A30D07B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5D1600D-9CF1-48C9-8200-AFD92A30D07B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C5D1600D-9CF1-48C9-8200-AFD92A30D07B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C47CF36D-2AC5-4D7B-B834-355B2AB9A779}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C47CF36D-2AC5-4D7B-B834-355B2AB9A779}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C47CF36D-2AC5-4D7B-B834-355B2AB9A779}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C47CF36D-2AC5-4D7B-B834-355B2AB9A779}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

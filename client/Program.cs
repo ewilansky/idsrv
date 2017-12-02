@@ -24,7 +24,7 @@ namespace client
 
             // request a token
             var tokenClient =
-                new TokenClient(disco.TokenEndpoint, "client", "secret");
+                new TokenClient(disco.TokenEndpoint, "webHdfsClient", "secret");
 
             var tokenResponse =
                 await tokenClient.RequestClientCredentialsAsync("api1");
