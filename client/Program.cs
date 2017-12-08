@@ -14,7 +14,7 @@ namespace client
             Contract.Ensures(Contract.Result<Task>() != null);
             // discover endpoints from metadata
             var disco =
-                await DiscoveryClient.GetAsync("https://mac.local:44304");
+                await DiscoveryClient.GetAsync("https://mac.my:44304");
 
             if (disco.IsError)
             {

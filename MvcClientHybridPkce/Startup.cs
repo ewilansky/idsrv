@@ -23,7 +23,7 @@ namespace MvcClient
                 {
                     options.SignInScheme = "Cookies";
 
-                    options.Authority = "https://mac.local:44304";
+                    options.Authority = "https://mac.my:44304";
                     options.RequireHttpsMetadata = false;
 
                     options.ClientId = "mvcClientHybrid";

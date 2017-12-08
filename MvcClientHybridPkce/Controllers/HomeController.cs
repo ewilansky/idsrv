@@ -36,28 +36,17 @@ namespace MvcClient.Controllers
 
         public async Task<IActionResult> CallApiUsingClientCredentials()
         {
-            var tokenClient = new TokenClient("https://mac.local:44304/connect/token", "mvc", "secret");
+            var tokenClient = 
+                new TokenClient("https://mac.my:44304/connect/token", "webHdfsClient", "secret");
+
             var tokenResponse = await tokenClient.RequestClientCredentialsAsync("api1");
 
             var client = new HttpClient();
             client.SetBearerToken(tokenResponse.AccessToken);
 
-
             var content =
                 await client.GetStringAsync("https://mini.local:44304/api/webhdfs");
 
-            //if (!response.IsSuccessStatusCode)
-            //{
-            //    Console.WriteLine($"Failure in retrieving a response from the api: {response.StatusCode}");
-            //}
-            //else
-            //{
-            //    var content = await response.Content.ReadAsStringAsync();
-            //    Console.WriteLine(JArray.Parse(content));
-            //}
-
-
-            // var content = await client.GetStringAsync("http://localhost:5001/identity");
 
             ViewBag.Json = JArray.Parse(content).ToString();
             return View("json");
@@ -69,7 +58,8 @@ namespace MvcClient.Controllers
 
             var client = new HttpClient();
             client.SetBearerToken(accessToken);
-            var content = await client.GetStringAsync("http://localhost:5001/identity");
+            var content = 
+                await client.GetStringAsync("https://mini.local:44304/api/webhdfs");
 
             ViewBag.Json = JArray.Parse(content).ToString();
             return View("json");

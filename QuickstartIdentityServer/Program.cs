@@ -30,7 +30,7 @@ namespace QuickstartIdentityServer
                 {
                     options.Listen(IPAddress.Any, 44304, listenOptions =>
                     {
-                        listenOptions.UseHttps("../mac.local.pfx", "pass");
+                        listenOptions.UseHttps("../mac.my.pfx", "pass");
                     });
                 });
             }

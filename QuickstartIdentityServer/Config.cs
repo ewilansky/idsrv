@@ -58,10 +58,9 @@ namespace QuickstartIdentityServer
                         new Secret("secret".Sha256())
                     },
 
-                    // RedirectUris = { "https://mac.local:44304/signin-oidc" },
-                    RedirectUris = { "https://mac.local:44399/signin-oidc" },
+                    RedirectUris = { "https://mac.my:44399/signin-oidc" },
 
-                    PostLogoutRedirectUris = { "https://mac.local:44304/signout-callback-oidc" },
+                    PostLogoutRedirectUris = { "https://mac.my:44399/signout-callback-oidc" },
 
                     AllowedScopes = 
                     {
@@ -83,10 +82,9 @@ namespace QuickstartIdentityServer
                         new Secret("secret".Sha256())
                     },
 
-                    // RedirectUris = { "https://mac.local:44304/signin-oidc" },
-                    RedirectUris = { "https://mac.local:44399/signin-oidc" },
+                    RedirectUris = { "https://mac.my:44399/signin-oidc" },
 
-                    PostLogoutRedirectUris = { "https://mac.local:44399/signout-callback-oidc" },
+                    PostLogoutRedirectUris = { "https://mac.my:44399/signout-callback-oidc" },
 
                     AllowedScopes =
                     {

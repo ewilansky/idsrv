@@ -30,7 +30,7 @@ namespace MvcClient
                 {
                     options.Listen(IPAddress.Any, 44399, listenOptions =>
                     {
-                        listenOptions.UseHttps("../mac.local.pfx", "pass");
+                        listenOptions.UseHttps("../mac.my.pfx", "pass");
                     });
                 });
             }
