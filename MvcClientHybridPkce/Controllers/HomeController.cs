@@ -34,7 +34,7 @@ namespace MvcClient.Controllers
             return View();
         }
 
-        public async Task<IActionResult> CallApiUsingClientCredentials()
+        public async Task<IActionResult> CallWebHdfsApiUsingClientCredentials()
         {
             var tokenClient = 
                 new TokenClient("https://mac.my:44304/connect/token", "webHdfsClient", "secret");
@@ -52,7 +52,7 @@ namespace MvcClient.Controllers
             return View("json");
         }
 
-        public async Task<IActionResult> CallApiUsingUserAccessToken()
+        public async Task<IActionResult> CallWebHdfsApiUsingUserAccessToken()
         {
             var accessToken = await HttpContext.GetTokenAsync("access_token");
 
@@ -60,6 +60,19 @@ namespace MvcClient.Controllers
             client.SetBearerToken(accessToken);
             var content = 
                 await client.GetStringAsync("https://mini.local:44304/api/webhdfs");
+
+            ViewBag.Json = JArray.Parse(content).ToString();
+            return View("json");
+        }
+
+        public async Task<IActionResult> CallYarnNodeApiUsingUserAccessToken()
+        {
+            var accessToken = await HttpContext.GetTokenAsync("access_token");
+
+            var client = new HttpClient();
+            client.SetBearerToken(accessToken);
+            var content =
+                await client.GetStringAsync("https://mini.local:44304/api/yarnnode");
 
             ViewBag.Json = JArray.Parse(content).ToString();
             return View("json");
