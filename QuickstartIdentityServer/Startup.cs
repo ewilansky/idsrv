@@ -1,10 +1,10 @@
-﻿// Copyright (c) Brock Allen & Dominick Baier. All rights reserved.
-// Licensed under the Apache License, Version 2.0. See LICENSE in the project root for license information.
-
-using IdentityServer4;
+﻿using IdentityServer4;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authentication.OpenIdConnect;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.IdentityModel.Protocols.OpenIdConnect;
 using Microsoft.IdentityModel.Tokens;
 
 namespace QuickstartIdentityServer
@@ -24,30 +24,24 @@ namespace QuickstartIdentityServer
                 .AddTestUsers(Config.GetUsers());
 
             services.AddAuthentication()
+                .AddCookie(CookieAuthenticationDefaults.AuthenticationScheme)
                 .AddGoogle("Google", options =>
                 {
                     options.SignInScheme = IdentityServerConstants.ExternalCookieAuthenticationScheme;
-
-                    // options.ClientId = "434483408261-55tc8n0cs4ff1fe21ea8df2o443v2iuc.apps.googleusercontent.com";
-                    // options.ClientSecret = "3gcoTrEDPPJ0ukn_aYYT6PWo";
                     options.ClientId = "172986759996-f031j0mlqh8k9qgumm3h602cm5rt0595.apps.googleusercontent.com";
                     options.ClientSecret = "R4Rd84vx1Gab7cJo-bJhXl6v";
-
-
                 })
-                .AddOpenIdConnect("oidc", "OpenID Connect", options =>
+                    .AddOpenIdConnect(OpenIdConnectDefaults.AuthenticationScheme, "Azure Portal", options =>
                 {
                     options.SignInScheme = IdentityServerConstants.ExternalCookieAuthenticationScheme;
-                    options.SignOutScheme = IdentityServerConstants.SignoutScheme;
-
-                    // options.Authority = "https://demo.identityserver.io/";
-                    options.Authority = "https://mac.my:44304/";
-                    // options.ClientId = "implicit";
-                    options.ClientId = "mvc_client";
-
+                    options.ClientId = "415ee7f3-0c53-4c58-9579-3cf54c1fd63e";
+                    // options.ClientSecret = "7KyCzTicUzgDuAL5wf/JGdM23bSEnCyBuwAwK6IxN3w=";
+                    options.Authority = $"https://login.microsoftonline.com/common";
+                    options.ResponseType = OpenIdConnectResponseType.IdToken;
 
                     options.TokenValidationParameters = new TokenValidationParameters
                     {
+                        ValidIssuer = "https://sts.windows.net/8d327499-ca18-4d3b-b150-24dfd1cbf5f5/",
                         NameClaimType = "name",
                         RoleClaimType = "role"
                     };
