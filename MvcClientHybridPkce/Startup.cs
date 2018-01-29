@@ -35,6 +35,8 @@ namespace MvcClient
 
                     options.Scope.Add("api1");
                     options.Scope.Add("offline_access");
+
+                    options.ClaimActions.Remove("name");
                 });
         }
 

@@ -8,7 +8,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		mac.local.pfx = mac.local.pfx
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityServerHybrid", "QuickstartIdentityServer\IdentityServerHybrid.csproj", "{C5D1600D-9CF1-48C9-8200-AFD92A30D07B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityServer", "QuickstartIdentityServer\IdentityServer.csproj", "{C5D1600D-9CF1-48C9-8200-AFD92A30D07B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcClientHybrid", "MvcClientHybridPkce\MvcClientHybrid.csproj", "{C47CF36D-2AC5-4D7B-B834-355B2AB9A779}"
 EndProject

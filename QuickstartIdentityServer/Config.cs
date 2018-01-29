@@ -56,7 +56,6 @@ namespace QuickstartIdentityServer
                     },
 
                     RedirectUris = { "https://mac.my:44399/signin-oidc" },
-
                     PostLogoutRedirectUris = { "https://mac.my:44399/signout-callback-oidc" },
 
                     AllowedScopes = 
@@ -80,8 +79,10 @@ namespace QuickstartIdentityServer
                     },
 
                     RedirectUris = { "https://mac.my:44399/signin-oidc" },
+                    FrontChannelLogoutUri = "https://mac.my:44304/signout-oidc",
+                    PostLogoutRedirectUris = { "https://mac.my:44399" },
 
-                    PostLogoutRedirectUris = { "https://mac.my:44399/signout-callback-oidc" },
+                    // PostLogoutRedirectUris = { "https://mac.my:44399/signout-callback-oidc" },
 
                     AllowedScopes =
                     {
