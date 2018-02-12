@@ -2,6 +2,8 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using System.IdentityModel.Tokens.Jwt;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using System;
 
 namespace MvcClient
 {
@@ -15,10 +17,17 @@ namespace MvcClient
 
             services.AddAuthentication(options =>
                 {
-                    options.DefaultScheme = "Cookies";
+                    options.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme;
                     options.DefaultChallengeScheme = "oidc";
                 })
-                .AddCookie("Cookies")
+                    
+                .AddCookie(options =>
+                {
+                    options.ExpireTimeSpan = TimeSpan.FromMinutes(60);
+                    options.Cookie.Name = "mvchybrid_idsrv";
+                })
+
+
                 .AddOpenIdConnect("oidc", options =>
                 {
                     options.SignInScheme = "Cookies";
@@ -33,6 +42,9 @@ namespace MvcClient
                     options.SaveTokens = true;
                     options.GetClaimsFromUserInfoEndpoint = true;
 
+                    options.Scope.Clear();
+                    options.Scope.Add("profile");
+                    options.Scope.Add("openid");
                     options.Scope.Add("api1");
                     options.Scope.Add("offline_access");
 
@@ -52,7 +64,6 @@ namespace MvcClient
             }
 
             app.UseAuthentication();
-
             app.UseStaticFiles();
             app.UseMvcWithDefaultRoute();
         }

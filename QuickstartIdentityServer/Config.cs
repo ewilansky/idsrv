@@ -49,11 +49,12 @@ namespace QuickstartIdentityServer
                     ClientId = "console.hybrid.pkce",
                     ClientName = "Client Hybrid With Pkce",
                     AllowedGrantTypes = GrantTypes.HybridAndClientCredentials,
+                    RequireClientSecret = false,
 
-                    ClientSecrets = 
-                    {
-                        new Secret("secret".Sha256())
-                    },
+                    //ClientSecrets = 
+                    //{
+                    //    new Secret("secret".Sha256())
+                    //},
 
                     RedirectUris = { "https://mac.my:44399/signin-oidc" },
                     PostLogoutRedirectUris = { "https://mac.my:44399/signout-callback-oidc" },
@@ -79,10 +80,7 @@ namespace QuickstartIdentityServer
                     },
 
                     RedirectUris = { "https://mac.my:44399/signin-oidc" },
-                    FrontChannelLogoutUri = "https://mac.my:44304/signout-oidc",
-                    PostLogoutRedirectUris = { "https://mac.my:44399" },
-
-                    // PostLogoutRedirectUris = { "https://mac.my:44399/signout-callback-oidc" },
+                    PostLogoutRedirectUris = { "https://mac.my:44399/signout-callback-oidc" },
 
                     AllowedScopes =
                     {
